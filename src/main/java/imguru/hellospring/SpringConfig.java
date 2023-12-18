@@ -1,6 +1,6 @@
 package imguru.hellospring;
 
-import imguru.hellospring.repository.JdbcMemberRepository;
+import imguru.hellospring.repository.JdbcTemplateMemberRepository;
 import imguru.hellospring.repository.MemberRepository;
 import imguru.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +27,7 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+//        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
