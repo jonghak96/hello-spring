@@ -4,6 +4,7 @@ import imguru.hellospring.domain.Member;
 import imguru.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +22,7 @@ public class MemberService {
     }
 
     /** 회원 가입 */
+    @Transactional
     public Long join(Member member) {
         // 이름 중복 불가 X
         validateDuplicatedMember(member);
